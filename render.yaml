@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: spotify-token-server
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: CLIENT_ID
+        fromSecret: CLIENT_ID
+      - key: CLIENT_SECRET
+        fromSecret: CLIENT_SECRET
